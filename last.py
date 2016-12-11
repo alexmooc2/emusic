@@ -32,7 +32,7 @@ def getTopTracks(user):
     response = json.load(safeGet(url))
     if response != None:
         logging.info(response)
-        response = response['toptracks']['track'][:8]
+        response = response['toptracks']['track'][:6]
         top_tracks = {}
         for item in response:
             top_tracks[item['artist']['name']] = item['name']
