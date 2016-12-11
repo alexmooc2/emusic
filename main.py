@@ -80,8 +80,7 @@ class LastFMResult(webapp2.RequestHandler):
         vals['emotions'] = []
         vals['numbers'] = []
         vals['tracks'] = lyrics_list
-        vals['artist_name'] = "PLACEHOLDER"
-        vals['album_name'] = "PLACEHOLDER"
+        vals['username'] = user
         for item in results:
             vals['emotions'].append(item) 
             vals['numbers'].append(results[item])

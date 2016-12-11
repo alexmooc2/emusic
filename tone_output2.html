@@ -1,19 +1,28 @@
 <html>
 <head>
     <script src="/js/chart.js/dist/Chart.bundle.js"></script>
+        <link rel="stylesheet" href="/css/home.css">
     <title></title>
 </head>
 <body>
-    <h1>Emotion Analysis for {{artist_name}} : {{album_name}}</h1>
-    <div >
-    <canvas width="400px" height="400px" id="chart" ></canvas>
+
+    <div class="resultcontainer">
+        <div class="thumbcontainer">    
+            <img class="songthumb" src="{{song_image}}"></img>
+            <h1>Emotion Analysis for {{username}} listening history</h1>
+        </div>
+        <div>
+            <canvas width="400px" height="400" id="chart" style="display: block; height: 400px; width: 400px;"></canvas>
+        </div>
     </div>
-    <h2>Tracks Analyzed:</h2>
-    <ul>
-        {% for item in tracks%}
-        <li>{{item.artist}} : {{item.track}}</li>
-        {% endfor %}    
-    </ul>
+    <div class="track_list">
+        <h2>Tracks Analyzed:</h2>
+        <ul>
+            {% for item in tracks%}
+            <li>{{item.artist}} : {{item.track}}</li>
+            {% endfor %}    
+        </ul>
+    </div>
     <script>
         var barData = {labels:[
             {% for item in emotions%}

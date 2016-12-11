@@ -33,7 +33,7 @@ def search(artist, song):
     url = base_url+method+"?"+urllib.urlencode(query)
     logging.info(url)
     response = safeGet(url)
-    if response != None:
+    if response != None or len(response['response']['hits']) != 0:
         response = response['response']['hits']
         track_object_list = [Track(item) for item in response]
         track_object_list = sorted(track_object_list, key = lambda x: SequenceMatcher(None, x.artist, artist).ratio(), reverse = True)
