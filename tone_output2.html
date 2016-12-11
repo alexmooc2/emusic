@@ -1,0 +1,56 @@
+<html>
+<head>
+    <script src="/js/chart.js/dist/Chart.bundle.js"></script>
+    <title></title>
+</head>
+<body>
+    <h1>Emotion Analysis for {{artist_name}} : {{album_name}}</h1>
+    <div >
+    <canvas width="400px" height="400px" id="chart" ></canvas>
+    </div>
+    <h2>Tracks Analyzed:</h2>
+    <ul>
+        {% for item in tracks%}
+        <li>{{item.artist}} : {{item.track}}</li>
+        {% endfor %}    
+    </ul>
+    <script>
+        var barData = {labels:[
+            {% for item in emotions%}
+                "{{item}}",
+            {% endfor %}
+        ],
+         datasets:[
+         {
+            pointBackgroundColor: "#f44242",
+            label: "Emotion Prevalance",
+            data: [
+                {% for item in numbers%}
+                    {{item}},
+                {% endfor %}
+            ],
+         }
+         ]}
+        var mychart = document.getElementById("chart").getContext("2d");
+        
+        steps = 10
+        max = 10
+        new Chart(mychart, {
+            data: barData,
+            type: "radar",
+            scaleOverride: true,
+            scaleSteps: steps,
+            scaleStepWidth: Math.ceil(max / steps),
+            scaleStartValue: 0,
+            scaleShowVerticalLines: true,
+            scaleShowGridLines : true,
+            barShowStroke : true,
+            options: {
+                maintainAspectRatio: true,
+                responsive: false,
+            }
+        });
+        
+    </script>
+</body>
+</html>

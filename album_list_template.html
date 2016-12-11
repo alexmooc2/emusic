@@ -1,0 +1,12 @@
+<html>
+<head>
+<title>{{page_title}}</title>
+</head>
+<body>
+    <ol>
+        {% for album in album_list %}
+            <li><a href="song_list_{{album_list[album]}}">{{album}}</a></li>
+        {% endfor %}
+    </ol>
+</body>
+</html>

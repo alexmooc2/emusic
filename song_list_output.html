@@ -1,0 +1,20 @@
+<html>
+<head>
+    <title>{{artist_name}} : {{album_name}}</title>
+</head>
+<body>
+    <!-- <ol>
+        {% for item in track_list %}
+        <li> <a></a> </li>
+        {% endfor %}
+    </ol> -->
+    
+    <form action="song_info" method="post" >
+        {% for item in tracks %}
+        <input type="radio" name="song" value="{{artist_name}}|{{item}}">{{ item }}</input><br>
+        {% endfor %}
+        <input type="submit" value="go"></input>
+    </form>
+</body>
+    
+</html>

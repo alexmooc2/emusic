@@ -1,0 +1,65 @@
+<html>
+<head>
+    <script src="/js/chart.js/dist/Chart.bundle.js"></script>
+        <link rel="stylesheet" href="/css/home.css">
+    <title></title>
+</head>
+<body>
+    <header  class="navbar">
+        <ol>
+            <li><a href="home.html">Home</a></li>
+            <li><a href="last_home.html">Last.fm</a></li>
+        </ol>
+    </header>
+    <div>
+    <div class="resultcontainer">
+        <div class="thumbcontainer">    
+            <img class="songthumb" src="{{song_image}}"></img>
+            <h1>Emotion Analysis for {{artist_name}} : {{song_name}} </h1>
+        </div>
+        <div>
+            <canvas width="400px" height="400" id="chart" style="display: block; height: 400px; width: 400px;"></canvas>
+        </div>
+    </div>
+    
+    </div>
+    <script>
+        var barData = {labels:[
+            {% for item in emotions%}
+                "{{item}}",
+            {% endfor %}
+        ],
+         datasets:[
+         {
+            pointBackgroundColor: "#f44242",
+            label: "Emotion Prevalance",
+            data: [
+                {% for item in numbers%}
+                    {{item}},
+                {% endfor %}
+            ],
+         }
+         ]}
+        var mychart = document.getElementById("chart").getContext("2d");
+        
+        steps = 10
+        max = 10
+        new Chart(mychart, {
+            data: barData,
+            type: "radar",
+            scaleOverride: true,
+            scaleSteps: steps,
+            scaleStepWidth: Math.ceil(max / steps),
+            scaleStartValue: 0,
+            scaleShowVerticalLines: true,
+            scaleShowGridLines : true,
+            barShowStroke : true,
+            options: {
+                maintainAspectRatio: true,
+                responsive: false,
+            }
+        });
+        
+    </script>
+</body>
+</html>

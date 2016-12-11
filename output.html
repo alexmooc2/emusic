@@ -1,0 +1,65 @@
+<html>
+<head>
+    <script src="./chart.js/dist/Chart.bundle.js"></script>
+    <title></title>
+</head>
+<body>
+    <h1>Emotion Analysis for j cole : 2014 Forest Hills Drive</h1>
+    <canvas id="chart" width="400" height="250"></canvas>
+    <script>
+        var barData = {labels:[
+            
+                "Anger",
+            
+                "Joy",
+            
+                "Fear",
+            
+                "Sadness",
+            
+                "Disgust",
+            
+        ],
+         datasets:[
+         {
+            backgroundColor: [
+                "#f44242",
+                "#4286f4",
+                "#56f442",
+                "#ebf442",
+                "#f48f42"
+            ],
+            data: [
+                
+                    2.536792,
+                
+                    1.123205,
+                
+                    2.419296,
+                
+                    4.331415,
+                
+                    0.603107,
+                
+            ],
+         }
+         ]}
+        var mychart = document.getElementById("chart").getContext("2d");
+        
+        steps = 10
+        max = 10
+        new Chart(mychart, {
+            data: barData,
+            type: "pie",
+            scaleOverride: true,
+            scaleSteps: steps,
+            scaleStepWidth: Math.ceil(max / steps),
+            scaleStartValue: 0,
+            scaleShowVerticalLines: true,
+            scaleShowGridLines : true,
+            barShowStroke : true,
+        });
+        
+    </script>
+</body>
+</html>

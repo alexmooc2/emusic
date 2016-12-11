@@ -1,0 +1,30 @@
+<html>
+    <head>
+        <title></title>
+        <link rel="stylesheet" href="/css/home.css">
+    </head>
+    <body>
+		<header class="navbar">
+			<ol>
+				<li><a href="home">Home</a></li>
+				<li><a href="last_home">Last.fm</a></li>
+			</ol>
+		</header>
+        <form action="song_info" method="post">
+            <div class="searchcontainer">
+                <div class="titlecontainer">
+                    <h1>Émotion</h1>
+                </div>
+                <div class="inputcontainer">
+                    <div class="searchbox">
+                        <label for="artist">Artist</label>
+                        <input class="searchinput" id="artist" name="artist" type="text"></input><br>
+                        <label for="song">Song</label>
+                        <input class="searchinput" id="song" name="song" type="text"></input><br>
+                    </div>
+                    <input class="submitinput" type="submit" value="Go"></input>
+                </div>
+            </div>
+        </form>
+    </body>
+</html>

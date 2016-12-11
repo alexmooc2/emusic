@@ -1,0 +1,23 @@
+
+
+h1
+{
+    text-align: center;
+    color: #ffffff;
+}
+
+body
+{
+    background: #000000;
+}
+
+input#artist_search
+{
+    border: 0px;
+    background: none;
+    width: 100%;
+    color: white;
+    text-align: center;
+}
+
+

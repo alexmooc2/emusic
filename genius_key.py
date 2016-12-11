@@ -1,0 +1,3 @@
+client= "kX3eGa2-GKtg5AhFYp2_MM3fPR9zNaHeu0gzd4LFBqTNZKrMiAB6CQXt61_3IFg1"
+secret= "mfFDcU7Mn9wvwswpMeqK40oTvoIfDNdGxFNfnoDplC7t-uBiR6ezmN-RDtL96diPE2kzvoRoJNj5Yz6QDrjrLg"
+token = "MLvYJfg9Nl3CmrGsqCxHcdaXopHyhuxhn_gKpwzMDsc4S5WnLNeKwCSOae-DXvyk"
